@@ -1,0 +1,31 @@
+{
+    "entities": [
+        "CORE-R1",
+        "CORE-R2",
+        "Agg-S1",
+        "Agg-S2",
+        "Acc-S1"
+    ],
+    "qa_pairs": [
+        {
+            "question": "What is the overall topology of this network? Is it a star, bus, ring, mesh, or hybrid topology?",
+            "answer": "The overall topology of this network is a hybrid topology."
+        },
+        {
+            "question": "What are the key network segments in this topology, and what are their purposes?",
+            "answer": "The key network segments in this topology are:\n\n1. **Core Layer**:\n   - **CORE-R1 and CORE-R2**: These routers serve as the backbone of the network, providing high-speed connectivity and routing between different segments of the network and the Internet.\n\n2. **Aggregation Layer**:\n   - **Agg-S1 and Agg-S2**: These switches aggregate traffic from the access layer switches and connect to the core layer, managing data flow and providing redundancy.\n\n3. **Access Layer**:\n   - **Acc-S1**: Connects to access points (AP1, AP2) for guest access in the reception center.\n   - **Acc-S2**: Connects to an FTP server and a printer for the R&D department.\n   - **Acc-S3**: Connects to a printer for the Marketing department.\n   - **Acc-S4**: Connects to a printer for the Administration department.\n\nEach layer serves a specific purpose, with the core layer focusing on high-speed routing, the aggregation layer managing traffic from multiple access points, and the access layer providing end-user connectivity and services."
+        },
+        {
+            "question": "Describe the role of the CORE-R2 in this network and how it interacts with other entities.",
+            "answer": "The CORE-R2 serves as a central routing entity in the network topology, facilitating communication between the Internet and the aggregation layer. It interacts with the following entities:\n\n1. **CORE-R1**: CORE-R2 is connected to CORE-R1, allowing for redundancy and load balancing between the two core routers.\n\n2. **Agg-S1 and Agg-S2**: CORE-R2 connects to both Aggregation Switches (Agg-S1 and Agg-S2), enabling data traffic management and distribution to the access layer switches (Acc-S1, Acc-S2, Acc-S3, Acc-S4).\n\n3. **Access Layer Switches (Acc-S1, Acc-S2, Acc-S3, Acc-S4)**: Through Agg-S1 and Agg-S2, CORE-R2 provides connectivity to the access layer, allowing end devices and services (like printers and servers) to communicate with the broader network and the Internet.\n\nOverall, CORE-R2 plays a crucial role in ensuring efficient data flow and connectivity across the network."
+        },
+        {
+            "question": "How would you implement a backup strategy for the Agg-S2, considering its relations with other critical entities in the network?",
+            "answer": "To implement a backup strategy for Agg-S2, considering its relations with other critical entities in the network, follow these steps:\n\n1. **Redundant Connections**: Ensure that Agg-S2 has redundant connections to both CORE-R1 and CORE-R2. This provides failover capabilities in case one of the core routers fails.\n\n2. **Data Backup**: Regularly back up the configurations and data from Agg-S2, including the FTP server data. Use automated scripts to schedule backups at off-peak hours to minimize impact on network performance.\n\n3. **Network Monitoring**: Implement monitoring tools to track the health and performance of Agg-S2. Set up alerts for any anomalies that could indicate potential failures.\n\n4. **Failover Mechanism**: Configure a failover mechanism that allows traffic to reroute to Agg-S1 or other access switches (Acc-S3, Acc-S4) if Agg-S2 becomes unavailable.\n\n5. **Testing**: Regularly test the backup and failover processes to ensure they work as intended. Conduct drills to familiarize the team with recovery procedures.\n\n6. **Documentation**: Maintain thorough documentation of the backup strategy, including configurations, schedules, and recovery procedures, to facilitate quick recovery in case of failure.\n\nBy implementing these strategies, you can enhance the resilience of Agg-S2 and ensure continuity of services in the network."
+        },
+        {
+            "question": "What are some potential security vulnerabilities in this network, particularly concerning the interactions between Agg-S1 and Acc-S1, and how would you address them?",
+            "answer": "Some potential security vulnerabilities concerning the interactions between Agg-S1 and Acc-S1 include:\n\n1. **Unauthorized Access**: The guest access points (AP1 and AP2) connected to Acc-S1 may allow unauthorized users to access the internal network.\n\n2. **Insufficient Segmentation**: If there is no proper segmentation between guest access and internal resources, it could lead to potential attacks on sensitive data or systems.\n\n3. **Weak Authentication**: If the authentication mechanisms for the guest network are weak, it could be exploited by attackers to gain access to the internal network.\n\n4. **Insecure Protocols**: If data transmitted between Agg-S1 and Acc-S1 uses insecure protocols, it could be intercepted by attackers.\n\n### Mitigation Strategies:\n\n1. **Network Segmentation**: Implement VLANs to separate guest traffic from internal network traffic, ensuring that guests cannot access sensitive resources.\n\n2. **Strong Authentication**: Use robust authentication methods (e.g., WPA3 for Wi-Fi) and enforce strong password policies for guest access.\n\n3. **Access Control Lists (ACLs)**: Configure ACLs on Agg-S1 to restrict access to critical resources from the guest network.\n\n4. **Monitoring and Logging**: Implement monitoring solutions to detect unusual activities and maintain logs for auditing purposes.\n\n5. **Secure Protocols**: Ensure that all communications between Agg-S1 and Acc-S1 use secure protocols (e.g., HTTPS, SFTP) to protect data in transit.\n\nBy addressing these vulnerabilities, the overall security posture of the network can be significantly improved."
+        }
+    ]
+}

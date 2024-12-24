@@ -1,0 +1,3 @@
+This network topology represents a **hybrid topology** architecture. Key components include **client devices (APP, PC)**, a **gateway**, **Eureka services (EUREKA-A, EUREKA-B)**, a **Config Server**, and various **microservices** (e.g., app, vehicle, fastdfs, log). These components are connected via **HTTPS** and internal service discovery mechanisms.
+
+The overall structure supports **service discovery, configuration management, and data storage**. Notable features include **dynamic service registration**, **data synchronization**, and **inter-service communication**, ensuring efficient communication between **client devices and microservices**.

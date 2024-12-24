@@ -1,0 +1,1 @@
+This network topology represents a hybrid architecture. Key components include Core1, Core2, Admin, Dist, and the Server Farm, connected via switches and routers. The overall structure supports efficient data flow and redundancy. Notable features include high availability and scalability, ensuring efficient communication between user groups and services.

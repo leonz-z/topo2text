@@ -1,0 +1,1 @@
+This network topology represents a star architecture. Key components include switches, application systems, firewalls, databases, and load balancers, connected via Ethernet cables. The overall structure supports efficient data flow and redundancy. Notable features include high availability and scalability, ensuring efficient communication between various user groups and services.

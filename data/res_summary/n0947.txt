@@ -1,0 +1,1 @@
+This network topology represents a hybrid architecture. Key components include a Router, Switch1, and Switch2, connected via Ethernet cables. The overall structure supports efficient data flow and internal communication among devices. Notable features include redundancy and scalability, ensuring efficient communication between local area network devices and external networks.

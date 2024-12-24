@@ -1,0 +1,29 @@
+{
+    "entities": [
+        "Internet / WAN Router",
+        "Collapse Core",
+        "Access"
+    ],
+    "qa_pairs": [
+        {
+            "question": "What is the overall topology of this network? Is it a star, bus, ring, mesh, or hybrid topology?",
+            "answer": "The overall topology of this network is a hybrid topology."
+        },
+        {
+            "question": "What are the key network segments in this topology, and what are their purposes?",
+            "answer": "The key network segments in this topology are:\n\n1. **Internet / WAN Router**: This segment connects the internal network to external networks, such as the Internet and other sites. Its purpose is to route traffic between the internal network and external sources.\n\n2. **Collapse Core**: This segment serves as the central point of connectivity within the network. It aggregates traffic from various access layers and facilitates communication between them, ensuring efficient data flow.\n\n3. **Access**: This segment represents the access layer where end devices connect to the network. Its purpose is to provide users with access to network resources and services.\n\nOverall, these segments work together to create a structured and efficient network architecture."
+        },
+        {
+            "question": "Describe the role of the Internet / WAN Router in this network and how it interacts with other entities.",
+            "answer": "The Internet / WAN Router serves as the gateway between the internal network and external networks, such as the Internet and Site 2. Its primary role is to route data packets to and from these external sources, ensuring that communication can occur between the internal network and the outside world.\n\nIn this topology, the Internet / WAN Router interacts with the following entities:\n\n1. **Collapse Core**: The router connects directly to the Collapse Core, facilitating the transfer of data between the external networks and the internal network infrastructure. It directs traffic to the appropriate paths within the Collapse Core.\n\n2. **Access Layer**: The router also supports communication with the Access layer, allowing end devices connected to this layer to access external resources and services. It ensures that data from the Access layer can reach the Internet and vice versa.\n\nOverall, the Internet / WAN Router plays a crucial role in managing and directing traffic, maintaining connectivity between the internal network and external entities."
+        },
+        {
+            "question": "How would you implement a backup strategy for the Collapse Core, considering its relations with other critical entities in the network?",
+            "answer": "To implement a backup strategy for the Collapse Core, consider the following steps:\n\n1. **Redundant Connections**: Establish redundant links between the Collapse Core and both the Internet/WAN Router and Access nodes to ensure continuous connectivity in case of a failure.\n\n2. **High Availability Configuration**: Utilize high availability protocols (e.g., HSRP, VRRP) for the Collapse Core to provide failover capabilities, allowing another device to take over in case of a primary failure.\n\n3. **Regular Backups**: Schedule regular configuration backups of the Collapse Core to a secure location. This can be automated using scripts or network management tools.\n\n4. **Monitoring and Alerts**: Implement monitoring tools to continuously check the health of the Collapse Core and its connections. Set up alerts for any anomalies or failures.\n\n5. **Testing Failover Procedures**: Regularly test the failover procedures to ensure that backup systems and configurations work as intended during an actual failure.\n\n6. **Documentation**: Maintain up-to-date documentation of the network topology, configurations, and backup procedures to facilitate quick recovery.\n\nBy following these steps, you can create a robust backup strategy for the Collapse Core that minimizes downtime and ensures network reliability."
+        },
+        {
+            "question": "What are some potential security vulnerabilities in this network, particularly concerning the interactions between Internet / WAN Router and Collapse Core, and how would you address them?",
+            "answer": "Some potential security vulnerabilities in this network concerning the interactions between the Internet / WAN Router and the Collapse Core include:\n\n1. **Unauthorized Access**: If the Internet / WAN Router is not properly secured, it could allow unauthorized users to access the Collapse Core and the internal network.\n\n   **Mitigation**: Implement strong access control measures, such as firewalls and VPNs, to restrict access to authorized users only.\n\n2. **DDoS Attacks**: The Internet / WAN Router could be targeted by Distributed Denial of Service (DDoS) attacks, which could overwhelm the Collapse Core and disrupt services.\n\n   **Mitigation**: Use DDoS protection services and configure rate limiting on the router to manage traffic and mitigate potential attacks.\n\n3. **Data Interception**: Data transmitted between the Internet / WAN Router and the Collapse Core could be intercepted if not encrypted.\n\n   **Mitigation**: Implement encryption protocols (e.g., IPsec, SSL/TLS) for data in transit to protect sensitive information.\n\n4. **Misconfiguration**: Incorrect configurations on the Internet / WAN Router could expose the Collapse Core to vulnerabilities.\n\n   **Mitigation**: Regularly audit configurations and apply best practices for network device security.\n\n5. **Firmware Vulnerabilities**: The router and core devices may have unpatched vulnerabilities that could be exploited.\n\n   **Mitigation**: Keep all firmware and software up to date with the latest security patches.\n\nBy addressing these vulnerabilities, the security posture of the network can be significantly improved."
+        }
+    ]
+}

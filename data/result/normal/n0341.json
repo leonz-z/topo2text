@@ -1,0 +1,28 @@
+{
+    "entities": [
+        "Server",
+        "Wide Area Network"
+    ],
+    "qa_pairs": [
+        {
+            "question": "What is the overall topology of this network? Is it a star, bus, ring, mesh, or hybrid topology?",
+            "answer": "The overall topology of this network is a hybrid topology."
+        },
+        {
+            "question": "What are the key network segments in this topology, and what are their purposes?",
+            "answer": "The key network segments in this topology are:\n\n1. **LAN (Local Area Network)**: Each LAN segment connects multiple workstations to a server, allowing for local communication, resource sharing, and management within a limited geographical area.\n\n2. **Wide Area Network (WAN)**: The WAN segment connects multiple LANs, enabling communication and data exchange between different geographical locations. It facilitates broader connectivity beyond local networks.\n\nThese segments work together to provide both local and wide-ranging network capabilities."
+        },
+        {
+            "question": "Describe the role of the Server in this network and how it interacts with other entities.",
+            "answer": "In this network topology, the Server plays a crucial role as a centralized resource provider within each Local Area Network (LAN). It interacts with the workstations by providing services such as file storage, application hosting, and data management. \n\nThe Servers in each LAN are connected to a Wide Area Network (WAN), allowing them to communicate with each other and share resources across different locations. This interaction enables data exchange and collaboration between users on different LANs, facilitating broader network functionality and connectivity."
+        },
+        {
+            "question": "How would you implement a backup strategy for the Wide Area Network, considering its relations with other critical entities in the network?",
+            "answer": "To implement a backup strategy for the Wide Area Network (WAN) considering its relations with other critical entities, follow these steps:\n\n1. **Centralized Backup Server**: Designate one of the servers within the LANs as a centralized backup server to manage backups from all connected LANs.\n\n2. **Regular Backup Schedule**: Establish a regular backup schedule for data on each server in the LANs. This could be daily incremental backups and weekly full backups.\n\n3. **Data Replication**: Implement data replication between the servers in different LANs to ensure that critical data is available in multiple locations.\n\n4. **Offsite Backup**: Utilize cloud storage or an offsite location for additional redundancy. This protects against local disasters affecting the WAN.\n\n5. **Monitoring and Alerts**: Set up monitoring tools to track backup success and failures, ensuring timely alerts for any issues.\n\n6. **Testing Restores**: Regularly test the restore process to ensure that backups can be successfully restored when needed.\n\n7. **Documentation**: Maintain clear documentation of the backup procedures, schedules, and recovery processes for all involved entities.\n\nThis strategy ensures data integrity and availability across the WAN and its associated LANs."
+        },
+        {
+            "question": "What are some potential security vulnerabilities in this network, particularly concerning the interactions between Server and Wide Area Network, and how would you address them?",
+            "answer": "Some potential security vulnerabilities in this network concerning the interactions between the Server and the Wide Area Network (WAN) include:\n\n1. **Data Interception**: Data transmitted over the WAN can be intercepted by unauthorized users.\n   - **Mitigation**: Use encryption protocols (e.g., VPN, SSL/TLS) to secure data in transit.\n\n2. **Unauthorized Access**: Servers connected to the WAN may be exposed to unauthorized access attempts.\n   - **Mitigation**: Implement strong authentication mechanisms, such as multi-factor authentication (MFA), and use firewalls to restrict access.\n\n3. **Malware and Attacks**: The WAN can be a vector for malware attacks, including DDoS attacks targeting the servers.\n   - **Mitigation**: Deploy intrusion detection and prevention systems (IDPS) and regularly update antivirus software.\n\n4. **Configuration Vulnerabilities**: Misconfigured servers or network devices can lead to security gaps.\n   - **Mitigation**: Regularly audit configurations and apply security best practices.\n\n5. **Insider Threats**: Employees with access to the servers may intentionally or unintentionally compromise security.\n   - **Mitigation**: Implement access controls and monitor user activities to detect suspicious behavior.\n\n6. **Lack of Updates**: Servers may not be regularly updated, leaving them vulnerable to known exploits.\n   - **Mitigation**: Establish a routine patch management process to ensure all systems are up to date.\n\nBy addressing these vulnerabilities with appropriate security measures, the overall security posture of the network can be significantly improved."
+        }
+    ]
+}

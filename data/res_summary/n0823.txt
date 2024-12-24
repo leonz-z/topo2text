@@ -1,0 +1,3 @@
+This network topology represents a hybrid architecture. Key components include the main switch (主交换机), firewall (防火墙), routers, and various VLANs (VLAN1 to VLAN7), as well as specific services like ERP and HR. These components are connected via switches and routers, facilitating both internal and external communications.
+
+The overall structure supports efficient data flow and security, with VLANs segmenting network traffic for performance and management purposes. Notable features include secure VPN connections for remote access and an internet connection for external communication, ensuring robust interaction between different user groups and services.

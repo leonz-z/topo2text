@@ -1,0 +1,1 @@
+This network topology represents a star architecture. Key components include vEdge-3, ISP-1, and ISP-2, connected via underlay and overlay networks. The overall structure supports internet connectivity and data transmission. Notable features include redundancy and load balancing between ISPs, ensuring efficient communication between external networks and the vEdge-3 device.
