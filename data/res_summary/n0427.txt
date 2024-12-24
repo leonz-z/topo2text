@@ -1,0 +1,3 @@
+This network topology represents a hybrid architecture. Key components include two data centers (Data Center 1 and Data Center 2), spine switches, leaf switches, and three Application Policy Infrastructure Controllers (APIC 1, APIC 2, APIC 3). These components are connected via high-speed spine switches and an Interpod Network (IPN) that facilitates communication between the data centers.
+
+The overall structure supports efficient data flow and redundancy, ensuring robust connectivity and management across the network. Notable features include high availability and policy-based management through the APICs, ensuring efficient communication between servers and network devices.

@@ -1,0 +1,3 @@
+This network topology represents a **star topology** architecture. Key components include **ISP-R1** (Internet Service Provider Router), **CORE-R1** (Core Router), **Agg-S1** (Aggregation Switch), and multiple **Access Switches** (Acc-S1, Acc-S2, Acc-S3, Acc-S4). These components are connected via **Ethernet connections** and **static routes**.
+
+The overall structure supports **efficient data flow** and **traffic management** across different VLANs for various departments. Notable features include **VLAN segmentation** for organizational purposes and **static routing** for optimized traffic direction, ensuring efficient communication between user groups such as the **R&D department**, **Marketing department**, **Administration department**, and **Guest access**.

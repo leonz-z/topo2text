@@ -1,0 +1,1 @@
+This network topology represents a hybrid architecture. Key components include routers, switches, and hubs, connected via Ethernet cables. The overall structure supports efficient data flow and redundancy. Notable features include the combination of star and ring topologies, ensuring effective communication between workstations and external networks.

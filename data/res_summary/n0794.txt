@@ -1,0 +1,3 @@
+This network topology represents a **hybrid topology** architecture. Key components include the **总控管理服务器 (Central Management Server)**, **流媒体服务器 (Streaming Media Server)**, **存储设备 (Storage Device)**, **交换机 (Switch)**, **高清矩阵 (HD Matrix)**, and **光纤收发器 (Fiber Optic Transceiver)**. These components are connected via switches and fiber optic transceivers, facilitating efficient communication and data transfer.
+
+The overall structure supports **data flow and redundancy**, ensuring reliable media streaming and management. Notable features include **high availability and scalability**, which enhance the network's capability to handle various user groups and services, including surveillance and media distribution.

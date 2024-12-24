@@ -1,0 +1,3 @@
+This network topology represents a hybrid architecture. Key components include the Consumer, Aggregation Routers (AR), and Access Points (AP). The Consumer generates interest requests at a rate of 20 interests per second, while the ARs aggregate data from the APs and manage the flow of information. The APs provide wireless connectivity to end devices within their coverage areas of 150m and 40m.
+
+The overall structure supports efficient data routing from the Consumer through the ARs to the APs, ensuring effective communication and resource access. Notable features include redundancy and load balancing, enhancing the network's resilience and performance for end users.
