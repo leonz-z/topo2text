@@ -1,0 +1,31 @@
+{
+    "entities": [
+        "Consumer",
+        "NDN Access Router (NAR)",
+        "Previous - NAR",
+        "Current-NAR",
+        "Mobile Producer"
+    ],
+    "qa_pairs": [
+        {
+            "question": "What is the overall topology of this network? Is it a star, bus, ring, mesh, or hybrid topology?",
+            "answer": "The overall topology of this network is a hybrid topology."
+        },
+        {
+            "question": "What are the key network segments in this topology, and what are their purposes?",
+            "answer": "The key network segments in this topology are:\n\n1. **Consumer to NDN Access Router (NAR)**: This segment represents the connection where the consumer sends an \"Interest\" request to the NAR to access content.\n\n2. **NDN Access Router (NAR) to Previous-NAR**: This segment indicates the communication path where the NAR forwards the \"Interest\" to the Previous-NAR, which may hold cached content or facilitate the request.\n\n3. **NDN Access Router (NAR) to Current-NAR**: This segment shows the connection where the NAR communicates with the Current-NAR, which is likely the active node providing the requested content.\n\n4. **Current-NAR to Mobile Producer**: This segment represents the path for content delivery from the Current-NAR to the Mobile Producer, which generates or provides the requested content.\n\nOverall, these segments facilitate the flow of requests and responses between consumers, routers, and content producers in a networked environment."
+        },
+        {
+            "question": "Describe the role of the Current-NAR in this network and how it interacts with other entities.",
+            "answer": "The Current-NAR (Network Access Router) serves as a key intermediary in the network, facilitating communication between the Consumer and the Mobile Producer. Its primary role is to manage and route Interest packets from the Consumer to the Mobile Producer, ensuring that data requests are efficiently handled.\n\nInteraction with other entities includes:\n\n1. **Consumer**: The Current-NAR receives Interest packets from the Consumer and processes these requests to forward them appropriately.\n  \n2. **Previous-NAR**: The Current-NAR may interact with the Previous-NAR to retrieve data or maintain continuity in data delivery, especially during transitions or handovers.\n\n3. **Mobile Producer**: The Current-NAR communicates with the Mobile Producer to deliver the requested content back to the Consumer, ensuring that data flows smoothly despite the Mobile Producer's potential mobility.\n\nOverall, the Current-NAR plays a crucial role in maintaining the network's efficiency and responsiveness by managing data requests and facilitating communication between various entities."
+        },
+        {
+            "question": "How would you implement a backup strategy for the Current-NAR, considering its relations with other critical entities in the network?",
+            "answer": "To implement a backup strategy for the Current-NAR, consider the following steps:\n\n1. **Redundant Configuration**: Set up a redundant Current-NAR that mirrors the configuration and state of the primary Current-NAR. This ensures that if the primary fails, the backup can take over seamlessly.\n\n2. **Data Synchronization**: Regularly synchronize data and state information between the Current-NAR and the backup. This can be done using replication techniques to ensure that both nodes have the same routing tables and cached data.\n\n3. **Monitoring and Alerts**: Implement monitoring tools to track the health and performance of the Current-NAR. Set up alerts for any anomalies that might indicate a failure.\n\n4. **Failover Mechanism**: Establish an automatic failover mechanism that can switch traffic to the backup Current-NAR in case the primary fails. This can be achieved using protocols like VRRP (Virtual Router Redundancy Protocol).\n\n5. **Testing and Drills**: Regularly test the backup strategy through drills to ensure that the failover process works as intended and that the backup can handle the traffic load.\n\n6. **Documentation and Procedures**: Maintain clear documentation of the backup strategy and procedures for recovery, ensuring that network administrators can quickly respond to failures.\n\nBy implementing these strategies, the reliability and availability of the Current-NAR can be significantly enhanced, ensuring continuous service for consumers and mobile producers."
+        },
+        {
+            "question": "What are some potential security vulnerabilities in this network, particularly concerning the interactions between Previous - NAR and NDN Access Router (NAR), and how would you address them?",
+            "answer": "Some potential security vulnerabilities in this network, particularly concerning the interactions between Previous - NAR and NDN Access Router (NAR), include:\n\n1. **Data Interception**: Unauthorized entities may intercept data packets exchanged between Previous - NAR and NAR, leading to data breaches.\n\n   **Mitigation**: Implement encryption protocols (e.g., TLS) for data in transit to ensure confidentiality and integrity.\n\n2. **Spoofing Attacks**: An attacker could impersonate Previous - NAR to send malicious data or requests to NAR.\n\n   **Mitigation**: Use strong authentication mechanisms (e.g., digital certificates) to verify the identity of routers before allowing data exchanges.\n\n3. **Denial of Service (DoS)**: An attacker could flood Previous - NAR or NAR with excessive requests, disrupting service.\n\n   **Mitigation**: Implement rate limiting and traffic analysis to detect and mitigate unusual traffic patterns.\n\n4. **Routing Attacks**: Malicious alterations to routing information could misdirect traffic or disrupt communication.\n\n   **Mitigation**: Employ secure routing protocols and regular audits of routing tables to detect anomalies.\n\n5. **Session Hijacking**: An attacker could hijack an active session between Previous - NAR and NAR to manipulate data flows.\n\n   **Mitigation**: Use session tokens with expiration and implement secure session management practices.\n\nAddressing these vulnerabilities involves a combination of robust security protocols, regular monitoring, and updates to the network infrastructure."
+        }
+    ]
+}

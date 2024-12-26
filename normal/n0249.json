@@ -1,0 +1,28 @@
+{
+    "entities": [
+        "Collapse Core",
+        "Backbone"
+    ],
+    "qa_pairs": [
+        {
+            "question": "What is the overall topology of this network? Is it a star, bus, ring, mesh, or hybrid topology?",
+            "answer": "The overall topology of this network is a hybrid topology."
+        },
+        {
+            "question": "What are the key network segments in this topology, and what are their purposes?",
+            "answer": "The key network segments in this topology are:\n\n1. **Collapse Core**: This segment serves as the central point for routing and switching within the network. It aggregates traffic from the access layer and connects to the backbone.\n\n2. **Backbone**: This segment provides high-speed connectivity between different parts of the network, facilitating communication between the collapse core and other network segments.\n\n3. **Access Layer**: This layer connects end users to the network, allowing devices to access network resources.\n\n4. **Users**: This segment represents the end devices that utilize the network services.\n\nEach segment plays a crucial role in ensuring efficient data flow and connectivity within the network."
+        },
+        {
+            "question": "Describe the role of the Collapse Core in this network and how it interacts with other entities.",
+            "answer": "The Collapse Core in this network serves as a central aggregation point that connects the Backbone to the Access Layer. Its primary role is to facilitate efficient data transfer and communication between the Backbone and the Access Layer, ensuring that user requests are processed and routed effectively. \n\nIn this architecture, the Collapse Core interacts with the Backbone by receiving and forwarding data traffic, while also connecting to the Access Layer to manage user connections. This design minimizes latency and optimizes bandwidth usage, allowing for streamlined communication across the network."
+        },
+        {
+            "question": "How would you implement a backup strategy for the Backbone, considering its relations with other critical entities in the network?",
+            "answer": "To implement a backup strategy for the Backbone in the given 2 Tier Architecture, consider the following steps:\n\n1. **Redundant Connections**: Ensure that the Backbone has multiple connections to the Collapse Core and Access Layer switches. This redundancy helps maintain connectivity in case one link fails.\n\n2. **Backup Links**: Utilize backup links that can be activated automatically if the primary links fail. Implement protocols like Spanning Tree Protocol (STP) to manage these links effectively.\n\n3. **Regular Backups**: Schedule regular configuration and data backups for the Backbone devices. Store these backups in a secure location, separate from the network.\n\n4. **Monitoring and Alerts**: Implement network monitoring tools to continuously check the health of the Backbone. Set up alerts for any anomalies or failures.\n\n5. **Testing Failover**: Regularly test the failover process to ensure that backup systems and connections activate as intended during an outage.\n\n6. **Documentation**: Maintain clear documentation of the network topology, backup procedures, and recovery plans to facilitate quick response during failures.\n\nBy following these steps, you can create a robust backup strategy for the Backbone, ensuring high availability and reliability in the network."
+        },
+        {
+            "question": "What are some potential security vulnerabilities in this network, particularly concerning the interactions between Collapse Core and Collapse Core, and how would you address them?",
+            "answer": "In the provided 2 Tier Architecture topology, potential security vulnerabilities concerning the interactions between the Collapse Core nodes may include:\n\n1. **Redundancy Risks**: If both Collapse Core nodes are not properly synchronized, a failure in one could lead to data loss or service disruption. \n\n   **Mitigation**: Implement redundancy protocols such as HSRP (Hot Standby Router Protocol) or VRRP (Virtual Router Redundancy Protocol) to ensure seamless failover.\n\n2. **Inter-node Communication**: Unsecured communication between Collapse Core nodes can be susceptible to interception or man-in-the-middle attacks.\n\n   **Mitigation**: Use secure communication protocols (e.g., IPsec, SSL/TLS) to encrypt data in transit between nodes.\n\n3. **Access Control**: Inadequate access controls may allow unauthorized access to the Collapse Core nodes.\n\n   **Mitigation**: Implement strict access control lists (ACLs) and role-based access controls (RBAC) to limit access to authorized personnel only.\n\n4. **Configuration Vulnerabilities**: Misconfigurations in the Collapse Core can expose the network to attacks.\n\n   **Mitigation**: Regularly audit configurations and employ automated tools to detect and rectify misconfigurations.\n\n5. **DDoS Attacks**: Collapse Core nodes may be targeted by Distributed Denial of Service (DDoS) attacks, overwhelming their capacity.\n\n   **Mitigation**: Deploy DDoS protection solutions and rate limiting to manage traffic and mitigate potential attacks.\n\nBy addressing these vulnerabilities through the suggested mitigations, the security posture of the network can be significantly improved."
+        }
+    ]
+}

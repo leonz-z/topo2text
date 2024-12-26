@@ -1,0 +1,33 @@
+{
+    "entities": [
+        "Modem",
+        "Wireless Router",
+        "Computer 1",
+        "Computer 2",
+        "Computer 3",
+        "Printer",
+        "Mobile"
+    ],
+    "qa_pairs": [
+        {
+            "question": "What is the overall topology of this network? Is it a star, bus, ring, mesh, or hybrid topology?",
+            "answer": "The overall topology of this network is a star topology."
+        },
+        {
+            "question": "What are the key network segments in this topology, and what are their purposes?",
+            "answer": "The key network segments in this topology are:\n\n1. **Modem**: Connects to the internet and serves as the gateway for external communication.\n2. **Wireless Router**: Distributes internet access to connected devices via Wi-Fi and Ethernet, managing local network traffic.\n3. **Ethernet Connections**: Provide wired connections to devices like Computer 2 and the Printer, ensuring stable and high-speed connectivity.\n4. **Wi-Fi Connections**: Allow wireless devices such as Computer 1, Computer 3, and Mobile to connect to the network, offering flexibility and mobility.\n\nEach segment plays a crucial role in facilitating communication and resource sharing among devices within the network."
+        },
+        {
+            "question": "Describe the role of the Wireless Router in this network and how it interacts with other entities.",
+            "answer": "The Wireless Router in this network serves as a central hub that facilitates communication between various devices and provides internet access. It connects to the Modem, which brings the internet connection into the network. \n\nThe Wireless Router interacts with the following entities:\n\n1. **Modem**: Receives internet data from the modem via a wired connection.\n2. **Computers (1, 2, and 3)**: Connects wirelessly (via WiFi) to the router, allowing them to access the internet and communicate with each other.\n3. **Printer**: Can connect either wirelessly or through an Ethernet cable, enabling printing from any connected device.\n4. **Mobile Device**: Connects wirelessly to the router, allowing mobile internet access and communication with other devices on the network.\n\nOverall, the Wireless Router manages data traffic between these entities, ensuring efficient communication and internet access."
+        },
+        {
+            "question": "How would you implement a backup strategy for the Modem, considering its relations with other critical entities in the network?",
+            "answer": "To implement a backup strategy for the Modem, consider the following steps:\n\n1. **Redundant Modem**: Acquire a second modem that can be configured as a backup. This modem should be compatible with your internet service provider.\n\n2. **Automatic Failover**: Set up an automatic failover system that switches to the backup modem if the primary modem fails. This can be achieved using a dual-WAN router that supports failover capabilities.\n\n3. **Regular Testing**: Periodically test the failover system to ensure that it functions correctly. This can involve simulating a failure of the primary modem.\n\n4. **Configuration Backup**: Regularly back up the configuration settings of the primary modem. This ensures that you can quickly restore settings on the backup modem if needed.\n\n5. **Monitoring**: Implement network monitoring tools to alert you of any issues with the primary modem, allowing for proactive management.\n\n6. **Documentation**: Maintain clear documentation of the network topology, including the roles of both modems, to facilitate troubleshooting and maintenance.\n\nBy following these steps, you can ensure that the Modem remains operational and minimizes downtime for connected devices like the Wireless Router, Computers, Printer, and Mobile devices."
+        },
+        {
+            "question": "What are some potential security vulnerabilities in this network, particularly concerning the interactions between Computer 1 and Computer 2, and how would you address them?",
+            "answer": "Some potential security vulnerabilities in this network, particularly concerning the interactions between Computer 1 and Computer 2, include:\n\n1. **Unsecured Wi-Fi Network**: If the wireless network is not secured with a strong password and encryption (e.g., WPA3), unauthorized users could gain access to the network, potentially intercepting data between Computer 1 and Computer 2.\n\n2. **Lack of Firewall Protection**: If either computer does not have a firewall enabled, it could be vulnerable to attacks from other devices on the network or from the internet.\n\n3. **Outdated Software**: If the operating systems or applications on Computer 1 and Computer 2 are not regularly updated, they may be susceptible to known vulnerabilities.\n\n4. **File Sharing Risks**: If file sharing is enabled without proper security measures, sensitive data could be exposed to other devices on the network.\n\n5. **Malware**: If either computer is infected with malware, it could compromise the security of the other computer through shared resources or network connections.\n\n### Addressing These Vulnerabilities:\n\n1. **Secure Wi-Fi**: Implement strong Wi-Fi security by using WPA3 encryption and a complex password. Regularly change the password and disable WPS.\n\n2. **Enable Firewalls**: Ensure that firewalls are enabled on both computers to monitor and control incoming and outgoing network traffic.\n\n3. **Regular Updates**: Keep operating systems and software applications up to date with the latest security patches and updates.\n\n4. **Control File Sharing**: Limit file sharing capabilities and ensure that shared folders are password-protected and accessible only to authorized users.\n\n5. **Antivirus Software**: Install and maintain reputable antivirus software on both computers to detect and remove malware.\n\n6. **Network Monitoring**: Use network monitoring tools to detect any unauthorized access or unusual activity on the network."
+        }
+    ]
+}

@@ -1,0 +1,34 @@
+{
+    "entities": [
+        "CORE-R1",
+        "CORE-R2",
+        "AC1",
+        "Agg-S1",
+        "Agg-S2",
+        "Acc-S1",
+        "Acc-S2",
+        "Acc-S3"
+    ],
+    "qa_pairs": [
+        {
+            "question": "What is the overall topology of this network? Is it a star, bus, ring, mesh, or hybrid topology?",
+            "answer": "The overall topology of this network is a hybrid topology."
+        },
+        {
+            "question": "What are the key network segments in this topology, and what are their purposes?",
+            "answer": "The key network segments in this topology are:\n\n1. **Core Layer**:\n   - **CORE-R1 and CORE-R2**: These routers connect to the Internet and serve as the backbone of the network, facilitating communication between different segments.\n\n2. **Aggregation Layer**:\n   - **AC1**: Acts as an access controller for devices connecting to the network.\n   - **Agg-S1 and Agg-S2**: These switches aggregate traffic from the access layer and connect to the core layer.\n\n3. **Access Layer**:\n   - **Acc-S1**: Provides guest access through AP1 and AP2 in the reception center.\n   - **Acc-S2**: Connects to an FTP server and a printer for the R&D department.\n   - **Acc-S3**: Connects to a printer for the Marketing department.\n   - **Acc-S4**: Connects to a printer for the Administration department.\n\nEach segment serves a specific purpose in managing and directing network traffic, ensuring efficient communication and resource sharing among different departments and users."
+        },
+        {
+            "question": "Describe the role of the Agg-S2 in this network and how it interacts with other entities.",
+            "answer": "In this network topology, Agg-S2 serves as an aggregation switch that connects multiple access switches (Acc-S2 and Acc-S3) and facilitates communication between them and the core routers (CORE-R1 and CORE-R2). \n\nAgg-S2 specifically interacts with:\n\n1. **Acc-S2**: It connects to Acc-S2, which hosts an FTP server for the R&D department, allowing data transfer and access to resources.\n2. **Acc-S3**: It also connects to Acc-S3, which provides access to a printer for the marketing department, enabling printing services for users connected to Acc-S3.\n\nOverall, Agg-S2 plays a crucial role in managing traffic between the access layer and the core layer, ensuring efficient data flow and resource sharing among the connected access switches."
+        },
+        {
+            "question": "How would you implement a backup strategy for the Agg-S2, considering its relations with other critical entities in the network?",
+            "answer": "To implement a backup strategy for Agg-S2, consider the following steps:\n\n1. **Redundant Connections**: Ensure that Agg-S2 has redundant connections to both CORE-R1 and CORE-R2 to maintain connectivity in case one path fails.\n\n2. **Data Replication**: Set up data replication for the FTP server connected to Agg-S2. This can be done by creating a backup FTP server on Acc-S3 or another accessible location to ensure data availability.\n\n3. **Regular Backups**: Schedule regular backups of the data on the FTP server. Use automated scripts to back up data to a secure location, such as a cloud storage solution or a dedicated backup server.\n\n4. **Monitoring and Alerts**: Implement monitoring tools to track the health of Agg-S2 and its connections. Set up alerts for any failures or performance issues to respond quickly.\n\n5. **Testing Recovery Procedures**: Regularly test the backup and recovery procedures to ensure that data can be restored quickly and accurately in the event of a failure.\n\n6. **Documentation**: Maintain clear documentation of the backup strategy, including procedures for data recovery, to ensure that all team members are aware of their roles in the event of an outage.\n\nBy following these steps, you can create a robust backup strategy for Agg-S2 that minimizes downtime and data loss."
+        },
+        {
+            "question": "What are some potential security vulnerabilities in this network, particularly concerning the interactions between Acc-S3 and Agg-S1, and how would you address them?",
+            "answer": "Some potential security vulnerabilities concerning the interactions between Acc-S3 and Agg-S1 include:\n\n1. **Unauthorized Access**: If access controls are not properly configured, unauthorized users may gain access to sensitive resources on Acc-S3, such as printers and data.\n\n2. **Data Interception**: Data transmitted between Acc-S3 and Agg-S1 could be intercepted if not encrypted, leading to potential data breaches.\n\n3. **Insufficient Segmentation**: If Acc-S3 is on the same network segment as other departments, it may be vulnerable to attacks from compromised devices within the same segment.\n\n4. **Malware Propagation**: If a device on Acc-S3 is infected with malware, it could spread to Agg-S1 and other connected devices.\n\nTo address these vulnerabilities, the following measures can be implemented:\n\n- **Access Control Lists (ACLs)**: Implement strict ACLs to limit access to Acc-S3 resources based on user roles and requirements.\n\n- **Encryption**: Use encryption protocols (e.g., TLS) for data in transit between Acc-S3 and Agg-S1 to protect against interception.\n\n- **Network Segmentation**: Create separate VLANs for different departments to limit exposure and reduce the attack surface.\n\n- **Regular Security Audits**: Conduct regular security assessments and audits to identify and remediate vulnerabilities.\n\n- **Endpoint Security**: Deploy endpoint protection solutions to detect and mitigate malware threats on devices connected to Acc-S3."
+        }
+    ]
+}

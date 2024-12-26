@@ -1,0 +1,28 @@
+{
+    "entities": [
+        "Server",
+        "Access Point"
+    ],
+    "qa_pairs": [
+        {
+            "question": "What is the overall topology of this network? Is it a star, bus, ring, mesh, or hybrid topology?",
+            "answer": "The overall topology of this network is a hybrid topology. It combines elements of both star topology (with access points connecting to notebooks) and bus topology (with the Ethernet cable connecting multiple devices)."
+        },
+        {
+            "question": "What are the key network segments in this topology, and what are their purposes?",
+            "answer": "The key network segments in this topology are:\n\n1. **Ethernet Segment**: This segment connects the server and the access points, facilitating wired communication between devices on the network.\n\n2. **Wireless Segments**: Each access point creates a wireless segment that connects multiple notebooks. These segments allow wireless devices to communicate with each other and access the network resources provided by the server.\n\nThe purpose of these segments is to enable both wired and wireless connectivity, allowing devices to communicate and access shared resources efficiently."
+        },
+        {
+            "question": "Describe the role of the Access Point in this network and how it interacts with other entities.",
+            "answer": "The Access Point (AP) in this network serves as a wireless communication hub that allows wireless devices, such as Notebooks, to connect to the network. It acts as a bridge between the wireless clients and the wired Ethernet network. \n\nThe AP interacts with the Notebooks by providing them with access to the network, enabling them to communicate with the Server and other devices connected via Ethernet. Each AP can support multiple Notebooks, facilitating wireless connectivity and data transmission within its coverage area. The APs are connected to the Ethernet backbone, ensuring that all devices can share resources and access the internet or other network services."
+        },
+        {
+            "question": "How would you implement a backup strategy for the Access Point, considering its relations with other critical entities in the network?",
+            "answer": "To implement a backup strategy for the Access Point, consider the following steps:\n\n1. **Redundancy**: Deploy a secondary Access Point that can take over if the primary fails. Ensure both Access Points are configured identically.\n\n2. **Configuration Backup**: Regularly back up the configuration settings of the Access Point to the Server. This can be automated using scripts or network management tools.\n\n3. **Monitoring**: Implement monitoring tools to track the performance and status of the Access Points. Set up alerts for any failures or performance degradation.\n\n4. **Firmware Updates**: Keep the firmware of the Access Points updated to ensure security and stability. Schedule regular updates and maintain a rollback plan in case of issues.\n\n5. **Network Documentation**: Maintain clear documentation of the network topology, including the Access Points and their configurations, to facilitate quick recovery in case of failure.\n\n6. **Testing**: Regularly test the backup and failover processes to ensure they work as intended and that personnel are familiar with the procedures.\n\nBy following these steps, you can ensure that the Access Point remains operational and that its configuration is secure and recoverable."
+        },
+        {
+            "question": "What are some potential security vulnerabilities in this network, particularly concerning the interactions between Access Point and Server, and how would you address them?",
+            "answer": "Some potential security vulnerabilities in this network concerning the interactions between Access Points and the Server include:\n\n1. **Unauthorized Access**: Access Points can be exploited by unauthorized users to gain access to the network. If not secured properly, attackers can connect to the Access Points and potentially access the Server.\n\n   **Mitigation**: Implement strong WPA3 encryption for wireless connections and use a secure password. Regularly update the firmware of the Access Points.\n\n2. **Man-in-the-Middle Attacks**: An attacker could intercept communications between the Access Points and the Server, leading to data breaches.\n\n   **Mitigation**: Use VPNs for secure communication between devices and the Server. Implement SSL/TLS for data transmission.\n\n3. **Weak Authentication**: If the Server does not enforce strong authentication methods, it could be vulnerable to attacks.\n\n   **Mitigation**: Use multi-factor authentication (MFA) for accessing the Server and sensitive data.\n\n4. **Network Segmentation**: All devices, including Access Points and Notebooks, may be on the same network segment, increasing the risk of lateral movement by an attacker.\n\n   **Mitigation**: Segment the network to isolate the Server from user devices, limiting access to only necessary services.\n\n5. **Unpatched Vulnerabilities**: Access Points and the Server may have unpatched vulnerabilities that can be exploited.\n\n   **Mitigation**: Regularly update and patch all devices in the network, including Access Points and the Server.\n\nBy addressing these vulnerabilities, the overall security posture of the network can be significantly improved."
+        }
+    ]
+}

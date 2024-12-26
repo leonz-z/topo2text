@@ -1,0 +1,30 @@
+{
+    "entities": [
+        "Collapse Core",
+        "Backbone",
+        "Access Layer",
+        "Users"
+    ],
+    "qa_pairs": [
+        {
+            "question": "What is the overall topology of this network? Is it a star, bus, ring, mesh, or hybrid topology?",
+            "answer": "The overall topology of this network is a hybrid topology. It combines elements of both star and mesh topologies, as the access layer connects to multiple backbone nodes in a star-like manner, while also having interconnections between the backbone nodes, resembling a mesh structure."
+        },
+        {
+            "question": "What are the key network segments in this topology, and what are their purposes?",
+            "answer": "The key network segments in this topology are:\n\n1. **Collapse Core**: This segment serves as the central point for data routing and aggregation, connecting the backbone and access layers. It ensures efficient data flow and high-speed connectivity.\n\n2. **Backbone**: This segment provides the main data transport path between the collapse core and the access layer. It facilitates communication across different parts of the network.\n\n3. **Access Layer**: This segment connects end-user devices to the network. It manages user access and provides services such as network security and traffic management.\n\n4. **Users**: This segment represents the end devices or users that connect to the network, utilizing the services provided by the access layer. \n\nEach segment plays a crucial role in maintaining network performance and connectivity."
+        },
+        {
+            "question": "Describe the role of the Access Layer in this network and how it interacts with other entities.",
+            "answer": "The Access Layer in this network topology serves as the point of connection for end users and devices to the network. Its primary role is to provide access to the network resources and facilitate communication between users and the Backbone.\n\nInteraction with other entities:\n\n1. **Users**: The Access Layer directly connects to user devices, allowing them to access network services and resources.\n\n2. **Backbone**: The Access Layer communicates with the Backbone, which aggregates data from multiple Access Layer switches and forwards it to the Collapse Core. This connection ensures that user data can be efficiently routed through the network.\n\n3. **Collapse Core**: The Access Layer sends aggregated traffic to the Collapse Core for further processing and routing to other network segments or external networks.\n\nOverall, the Access Layer acts as a bridge between end users and the higher-level network infrastructure, ensuring seamless connectivity and data flow."
+        },
+        {
+            "question": "How would you implement a backup strategy for the Collapse Core, considering its relations with other critical entities in the network?",
+            "answer": "To implement a backup strategy for the Collapse Core in the given 2-tier architecture, consider the following steps:\n\n1. **Redundancy**: Deploy redundant Collapse Core devices to ensure high availability. This can be achieved by configuring active-active or active-passive setups.\n\n2. **Data Backup**: Regularly back up the configuration and state of the Collapse Core devices. Use automated scripts to schedule backups and store them securely in a centralized location.\n\n3. **Monitoring and Alerts**: Implement monitoring tools to track the health and performance of the Collapse Core. Set up alerts for any anomalies or failures.\n\n4. **Failover Mechanism**: Establish a failover mechanism that automatically switches traffic to the backup Collapse Core in case of a failure. This ensures minimal disruption to the network.\n\n5. **Testing**: Regularly test the backup and failover processes to ensure they function correctly during an actual failure.\n\n6. **Documentation**: Maintain clear documentation of the backup procedures, configurations, and recovery steps to facilitate quick restoration in case of an incident.\n\nBy following these steps, you can ensure that the Collapse Core remains resilient and that network operations continue smoothly even in the event of a failure."
+        },
+        {
+            "question": "What are some potential security vulnerabilities in this network, particularly concerning the interactions between Backbone and Backbone, and how would you address them?",
+            "answer": "Some potential security vulnerabilities in this network, particularly concerning the interactions between Backbone and Backbone, include:\n\n1. **Data Interception**: If the Backbone nodes communicate over unsecured channels, data packets can be intercepted by malicious actors.\n\n   **Mitigation**: Implement encryption protocols (e.g., IPsec, SSL/TLS) for data in transit to ensure confidentiality and integrity.\n\n2. **Denial of Service (DoS) Attacks**: Backbone nodes could be targeted for DoS attacks, disrupting communication between the Collapse Core and Access Layer.\n\n   **Mitigation**: Use rate limiting, traffic filtering, and redundancy (e.g., load balancing) to minimize the impact of such attacks.\n\n3. **Unauthorized Access**: If access controls are weak, unauthorized users could gain access to Backbone nodes, compromising the entire network.\n\n   **Mitigation**: Implement strong authentication mechanisms (e.g., multi-factor authentication) and strict access control policies.\n\n4. **Configuration Vulnerabilities**: Misconfigurations in Backbone nodes can lead to security loopholes.\n\n   **Mitigation**: Regularly audit configurations and apply security best practices, including the principle of least privilege.\n\n5. **Lateral Movement**: If an attacker gains access to one Backbone node, they may move laterally to other nodes.\n\n   **Mitigation**: Segment the network and implement strict inter-node communication policies to limit lateral movement.\n\nBy addressing these vulnerabilities with appropriate security measures, the overall resilience of the network can be significantly improved."
+        }
+    ]
+}

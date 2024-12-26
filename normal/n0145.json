@@ -1,0 +1,34 @@
+{
+    "entities": [
+        "Elastic Load Balancer",
+        "Web App Server",
+        "EC2 Instance",
+        "Security Group",
+        "Auto scaling Group",
+        "S3 Bucket",
+        "CloudFront Distribution",
+        "Availability Zone #1"
+    ],
+    "qa_pairs": [
+        {
+            "question": "What is the overall topology of this network? Is it a star, bus, ring, mesh, or hybrid topology?",
+            "answer": "The overall topology of this network is a hybrid topology."
+        },
+        {
+            "question": "What are the key network segments in this topology, and what are their purposes?",
+            "answer": "The key network segments in this topology and their purposes are:\n\n1. **Elastic Load Balancer**: Distributes incoming traffic across multiple web app servers to ensure high availability and reliability.\n\n2. **Web App Server**: Hosts the application logic and processes requests from users. It is part of the auto-scaling group for dynamic scaling based on demand.\n\n3. **EC2 Instance**: A virtual server running in the AWS cloud, providing the compute resources for the web app server.\n\n4. **Security Group**: Acts as a virtual firewall to control inbound and outbound traffic to the EC2 instance and other resources.\n\n5. **Auto Scaling Group**: Automatically adjusts the number of EC2 instances based on traffic load, ensuring optimal performance and cost efficiency.\n\n6. **S3 Bucket**: Stores data such as logs, snapshots, and other files, providing scalable storage.\n\n7. **CloudFront Distribution**: A content delivery network (CDN) that delivers content from the S3 bucket to users with low latency.\n\n8. **Availability Zone #1**: Represents a specific geographic location within the AWS infrastructure, providing redundancy and fault tolerance. \n\nThese segments work together to create a scalable, secure, and efficient web application architecture."
+        },
+        {
+            "question": "Describe the role of the CloudFront Distribution in this network and how it interacts with other entities.",
+            "answer": "The CloudFront Distribution in this network serves as a content delivery network (CDN) that accelerates the delivery of web content to users. It caches copies of content from the S3 Bucket, which stores static assets such as images, videos, and logs. \n\nWhen a user requests content, the CloudFront Distribution retrieves it from the S3 Bucket, reducing latency and improving load times. It interacts with the Elastic Load Balancer by directing traffic to the Web App Server, ensuring that dynamic content is efficiently served while static content is delivered quickly from the cache. This setup enhances overall performance and scalability of the application."
+        },
+        {
+            "question": "How would you implement a backup strategy for the EC2 Instance, considering its relations with other critical entities in the network?",
+            "answer": "To implement a backup strategy for the EC2 Instance, consider the following steps based on its relations with other critical entities:\n\n1. **EBS Snapshots**: Regularly create EBS snapshots of the EC2 Instance's root and data volumes. This allows for point-in-time backups and can be automated using AWS Backup or Lambda functions.\n\n2. **S3 Bucket for Logs**: Configure the EC2 Instance to store application logs in the S3 Bucket. This ensures that logs are backed up and can be accessed even if the instance fails.\n\n3. **Auto Scaling Group**: Ensure that the Auto Scaling Group is configured to replace unhealthy instances automatically. This can help maintain availability and minimize downtime.\n\n4. **Security Group Configuration**: Ensure that the Security Group allows necessary traffic for backup operations, especially if using AWS services like Backup or third-party solutions.\n\n5. **Monitoring and Alerts**: Set up monitoring for the EC2 Instance and backup processes to receive alerts in case of failures or issues during backup operations.\n\nBy implementing these strategies, you can ensure that the EC2 Instance and its data are backed up effectively while maintaining availability and security."
+        },
+        {
+            "question": "What are some potential security vulnerabilities in this network, particularly concerning the interactions between CloudFront Distribution and Elastic Load Balancer, and how would you address them?",
+            "answer": "Some potential security vulnerabilities in the network concerning the interactions between CloudFront Distribution and Elastic Load Balancer include:\n\n1. **Misconfigured Security Groups**: If the security groups associated with the Elastic Load Balancer or the Web App Server are not properly configured, they could allow unauthorized access. \n\n   **Mitigation**: Regularly review and update security group rules to ensure only necessary ports and IP addresses are allowed.\n\n2. **Data Exposure**: If sensitive data is not properly secured when transmitted between CloudFront and the Elastic Load Balancer, it could be intercepted.\n\n   **Mitigation**: Implement HTTPS for all communications to encrypt data in transit.\n\n3. **DDoS Attacks**: Both CloudFront and the Elastic Load Balancer can be targets for Distributed Denial of Service (DDoS) attacks, which can overwhelm the services.\n\n   **Mitigation**: Utilize AWS Shield and AWS WAF to protect against DDoS attacks and filter malicious traffic.\n\n4. **Insecure S3 Bucket Access**: If the S3 bucket used by CloudFront is not properly secured, it could lead to unauthorized access to stored data.\n\n   **Mitigation**: Set appropriate bucket policies and use IAM roles to restrict access to the S3 bucket.\n\n5. **Lack of Monitoring and Logging**: Without proper monitoring, it may be difficult to detect and respond to security incidents.\n\n   **Mitigation**: Enable logging for both CloudFront and the Elastic Load Balancer, and use AWS CloudTrail for monitoring API calls.\n\nBy addressing these vulnerabilities, the security posture of the network can be significantly improved."
+        }
+    ]
+}

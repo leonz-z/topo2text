@@ -1,0 +1,34 @@
+{
+    "entities": [
+        "Firewall",
+        "School network",
+        "Core converter",
+        "File server",
+        "Website server",
+        "FIP server",
+        "Data server",
+        "Streaming media server"
+    ],
+    "qa_pairs": [
+        {
+            "question": "What is the overall topology of this network? Is it a star, bus, ring, mesh, or hybrid topology?",
+            "answer": "The overall topology of this network is a hybrid topology. It combines elements of star and bus topologies, with terminals connected to a central core converter and multiple servers branching out from it."
+        },
+        {
+            "question": "What are the key network segments in this topology, and what are their purposes?",
+            "answer": "The key network segments in this topology are:\n\n1. **Firewall**: Acts as a security barrier between the internal school network and the Internet, controlling incoming and outgoing traffic.\n\n2. **School Network**: Serves as the central hub for connecting various terminals and servers, facilitating communication and resource sharing within the school.\n\n3. **Core Converter**: Functions as a central device that manages data flow between different servers and the school network, ensuring efficient data routing.\n\n4. **File Server**: Provides storage and access to files for users within the network.\n\n5. **Website Server**: Hosts the school's website, making it accessible to users over the Internet.\n\n6. **FIP Server**: Likely serves specific applications or services related to the school's operations, though the exact purpose may vary.\n\n7. **Data Server**: Stores and manages databases and other data resources for the school.\n\n8. **Streaming Media Server**: Delivers streaming audio and video content to users within the network.\n\nThese segments work together to support the school's IT infrastructure, enabling communication, data storage, and access to online resources."
+        },
+        {
+            "question": "Describe the role of the Streaming media server in this network and how it interacts with other entities.",
+            "answer": "The Streaming media server in this network is responsible for delivering multimedia content, such as videos and audio, to users connected to the school network. It interacts with other entities in the following ways:\n\n1. **Core Converter**: The Streaming media server connects to the Core converter, which manages data traffic within the network, ensuring efficient delivery of streaming content.\n\n2. **Terminals**: Users access the Streaming media server through terminals, allowing them to stream media content directly.\n\n3. **Data Server**: It may interact with the Data server to retrieve or store media files, ensuring that the content is available for streaming.\n\nOverall, the Streaming media server plays a crucial role in providing multimedia services to users while relying on the Core converter for network management and potentially collaborating with the Data server for content storage."
+        },
+        {
+            "question": "How would you implement a backup strategy for the File server, considering its relations with other critical entities in the network?",
+            "answer": "To implement a backup strategy for the File server, consider the following steps based on its relations with other critical entities in the network:\n\n1. **Identify Backup Frequency**: Determine how often backups should occur (e.g., daily, weekly) based on the importance of the data on the File server.\n\n2. **Choose Backup Location**: Utilize the Data server or FIP server as a secondary location for backups, ensuring redundancy and accessibility.\n\n3. **Automate Backups**: Set up automated backup processes to minimize human error and ensure consistency. Use backup software that can schedule and manage these tasks.\n\n4. **Network Considerations**: Ensure that the backup process does not interfere with the performance of the School network. Schedule backups during off-peak hours.\n\n5. **Data Integrity Checks**: Implement regular integrity checks on the backup data to ensure that it is not corrupted and can be restored when needed.\n\n6. **Test Restore Procedures**: Regularly test the restore process to ensure that data can be recovered quickly and efficiently in case of a failure.\n\n7. **Documentation**: Maintain clear documentation of the backup strategy, including schedules, procedures, and contact information for responsible personnel.\n\n8. **Security Measures**: Ensure that backups are encrypted and access is restricted to authorized personnel only, protecting sensitive data from unauthorized access.\n\nBy following these steps, the backup strategy for the File server will be robust and aligned with the overall network topology."
+        },
+        {
+            "question": "What are some potential security vulnerabilities in this network, particularly concerning the interactions between Core converter and Website server, and how would you address them?",
+            "answer": "Some potential security vulnerabilities in this network concerning the interactions between the Core converter and the Website server include:\n\n1. **Unauthorized Access**: If the Core converter is compromised, it could allow unauthorized access to the Website server, leading to data breaches or defacement.\n\n2. **Data Interception**: Data transmitted between the Core converter and the Website server could be intercepted if not properly encrypted, exposing sensitive information.\n\n3. **Denial of Service (DoS)**: An attacker could target the Core converter to disrupt services, affecting the availability of the Website server.\n\n4. **Malware Propagation**: If the Core converter is infected with malware, it could spread to the Website server, compromising its integrity.\n\n### Mitigation Strategies:\n\n- **Implement Strong Authentication**: Use multi-factor authentication for accessing the Core converter and Website server to prevent unauthorized access.\n\n- **Encrypt Data Transmission**: Utilize protocols like HTTPS and VPNs to encrypt data between the Core converter and the Website server.\n\n- **Regular Security Audits**: Conduct regular security assessments and vulnerability scans to identify and remediate potential weaknesses.\n\n- **Intrusion Detection Systems (IDS)**: Deploy IDS to monitor traffic between the Core converter and Website server for suspicious activities.\n\n- **Update and Patch Management**: Ensure that all systems, including the Core converter and Website server, are regularly updated to protect against known vulnerabilities."
+        }
+    ]
+}

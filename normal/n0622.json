@@ -1,0 +1,33 @@
+{
+    "entities": [
+        "ISP Modem",
+        "pfSense Firewall",
+        "Switch",
+        "WiFi AP",
+        "Network Printer",
+        "Desktop",
+        "Xbox One"
+    ],
+    "qa_pairs": [
+        {
+            "question": "What is the overall topology of this network? Is it a star, bus, ring, mesh, or hybrid topology?",
+            "answer": "The overall topology of this network is a star topology."
+        },
+        {
+            "question": "What are the key network segments in this topology, and what are their purposes?",
+            "answer": "The key network segments in this topology are:\n\n1. **Internet Segment**: This segment connects to the ISP Modem, providing access to the internet.\n\n2. **Firewall Segment**: The pfSense Firewall acts as a security barrier between the internet and the internal network, managing traffic and protecting against external threats.\n\n3. **Wired Network Segment**: This includes the Switch, Network Printer, Desktop, and Xbox One. It facilitates communication between these devices, allowing for file sharing, printing, and gaming.\n\n4. **Wireless Network Segment**: The WiFi AP (Access Point) connects wireless devices like the Laptop, Cell Phone, and Tablet to the network, enabling mobile access to the internet and local resources.\n\nEach segment serves to organize and manage network traffic, enhance security, and provide connectivity for various devices."
+        },
+        {
+            "question": "Describe the role of the Network Printer in this network and how it interacts with other entities.",
+            "answer": "The Network Printer in this network serves as a shared printing resource for devices connected to the network. It is directly connected to the Switch, allowing it to communicate with other wired devices, such as the Desktop and Xbox One. \n\nAdditionally, devices connected to the WiFi Access Point (WiFi AP), such as laptops, cell phones, and tablets, can also access the Network Printer wirelessly. This setup enables users to print documents from various devices throughout the network, facilitating convenient and efficient printing capabilities."
+        },
+        {
+            "question": "How would you implement a backup strategy for the ISP Modem, considering its relations with other critical entities in the network?",
+            "answer": "To implement a backup strategy for the ISP Modem, consider the following steps:\n\n1. **Redundant ISP Modem**: Use a secondary ISP modem that can automatically take over if the primary modem fails. This can be achieved through a failover setup.\n\n2. **Power Backup**: Ensure both the primary and backup modems are connected to an Uninterruptible Power Supply (UPS) to maintain functionality during power outages.\n\n3. **Configuration Backup**: Regularly back up the configuration settings of the ISP modem. This can often be done through the modem's web interface, allowing for quick restoration in case of failure.\n\n4. **Monitoring**: Implement network monitoring tools to alert you of any issues with the ISP modem. This can help in proactive management and quick response to failures.\n\n5. **Documentation**: Maintain detailed documentation of the network topology and modem configurations to facilitate quick troubleshooting and recovery.\n\n6. **Testing**: Regularly test the failover process to ensure that the backup modem activates correctly when needed.\n\nBy following these steps, you can ensure that the ISP modem remains operational and minimizes downtime for the entire network."
+        },
+        {
+            "question": "What are some potential security vulnerabilities in this network, particularly concerning the interactions between pfSense Firewall and WiFi AP, and how would you address them?",
+            "answer": "Some potential security vulnerabilities in this network concerning the interactions between the pfSense Firewall and the WiFi AP include:\n\n1. **Weak WiFi Encryption**: If the WiFi AP uses outdated encryption protocols (like WEP), it can be easily compromised. \n   - **Mitigation**: Ensure that WPA3 or at least WPA2 is used for WiFi encryption.\n\n2. **Default Credentials**: The WiFi AP may still have default login credentials, making it vulnerable to unauthorized access.\n   - **Mitigation**: Change the default username and password to strong, unique credentials.\n\n3. **Unrestricted Access**: If the firewall rules are not properly configured, devices connected to the WiFi AP may have unrestricted access to the internal network.\n   - **Mitigation**: Implement strict firewall rules to limit access between the WiFi network and the internal network.\n\n4. **Firmware Vulnerabilities**: The WiFi AP may have outdated firmware that could be exploited.\n   - **Mitigation**: Regularly update the firmware of the WiFi AP to patch known vulnerabilities.\n\n5. **Guest Network Exposure**: If a guest network is enabled without proper isolation, it could allow guests to access internal resources.\n   - **Mitigation**: Ensure that the guest network is isolated from the main network and restrict access to sensitive resources.\n\n6. **Lack of Monitoring**: Without proper logging and monitoring, suspicious activities may go unnoticed.\n   - **Mitigation**: Enable logging on the pfSense Firewall and monitor traffic for unusual patterns.\n\nBy addressing these vulnerabilities, the overall security posture of the network can be significantly improved."
+        }
+    ]
+}

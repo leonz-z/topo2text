@@ -1,0 +1,34 @@
+{
+    "entities": [
+        "Meraki MX64",
+        "Meraki MR18",
+        "Meraki MS220-8P",
+        "MikroTik 705G",
+        "HP ProLiant MicroServer (G7)",
+        "Smart TV",
+        "iMac",
+        "Femto Cell"
+    ],
+    "qa_pairs": [
+        {
+            "question": "What is the overall topology of this network? Is it a star, bus, ring, mesh, or hybrid topology?",
+            "answer": "The overall topology of this network is a star topology."
+        },
+        {
+            "question": "What are the key network segments in this topology, and what are their purposes?",
+            "answer": "The key network segments in this topology are:\n\n1. **SSID_Private**: This segment is likely used for secure, internal network access, allowing trusted devices to connect and communicate without external interference.\n\n2. **SSID_guest**: This segment is intended for guest access, providing internet connectivity to visitors while isolating them from the internal network for security purposes.\n\n3. **Meraki MX64**: This device serves as the security appliance and router, managing traffic between the internal network and the internet, as well as providing firewall and VPN services.\n\n4. **Meraki MS220-8P**: This switch connects various devices within the network, facilitating communication and power over Ethernet (PoE) to compatible devices.\n\n5. **MikroTik 705G**: This router may be used for additional routing capabilities or to manage specific network traffic, possibly for the Close Lab segment.\n\n6. **HP ProLiant MicroServer (G7)**: This server hosts various services such as monitoring (Nagios), DNS, and potentially other applications for the Close Lab.\n\n7. **Femto Cell**: This device enhances cellular coverage, allowing mobile devices to connect to the network more effectively.\n\n8. **Smart TV and iMac**: These devices are endpoints within the network, likely used for media consumption and computing tasks, respectively.\n\nOverall, these segments serve to provide secure access, manage traffic, and support various devices and services within the network."
+        },
+        {
+            "question": "Describe the role of the MikroTik 705G in this network and how it interacts with other entities.",
+            "answer": "The MikroTik 705G in this network serves as a routing and switching device that facilitates communication between various network entities. It connects to the Meraki MX64, which acts as the main firewall and router, allowing for internet access and security management.\n\nThe MikroTik 705G interacts with the following entities:\n\n1. **Meraki MX64**: It receives and forwards traffic to and from the internet, ensuring that data flows efficiently between the external network and the internal devices.\n\n2. **HP ProLiant MicroServer (G7)**: It likely provides additional services such as hosting applications or managing network monitoring tools (e.g., Nagios, DNS).\n\n3. **Close Lab**: This entity may represent a segment of the network dedicated to specific applications or experiments, with the MikroTik facilitating communication between this lab and other parts of the network.\n\nOverall, the MikroTik 705G plays a crucial role in managing data traffic and ensuring connectivity among various devices and services within the network."
+        },
+        {
+            "question": "How would you implement a backup strategy for the MikroTik 705G, considering its relations with other critical entities in the network?",
+            "answer": "To implement a backup strategy for the MikroTik 705G, consider the following steps:\n\n1. **Regular Configuration Backups**: Schedule automatic backups of the MikroTik configuration to a secure location, such as the HP ProLiant MicroServer (G7), which can serve as a centralized backup repository.\n\n2. **Utilize Remote Storage**: Store backups on cloud services or external storage devices connected to the MicroServer to ensure redundancy.\n\n3. **Monitor Network Health**: Use the HP ProLiant MicroServer to run monitoring tools (like Nagios) to track the health of the MikroTik 705G and alert for any issues that may require a restore.\n\n4. **Document Recovery Procedures**: Create and maintain clear documentation on how to restore the MikroTik 705G from backups, ensuring that the process is understood by relevant personnel.\n\n5. **Test Backup Restores**: Regularly test the backup and restore process to ensure that backups are valid and can be restored without issues.\n\n6. **Secure Backup Data**: Ensure that all backup data is encrypted and access-controlled to protect against unauthorized access.\n\nBy following these steps, you can ensure that the MikroTik 705G is adequately backed up and can be quickly restored in case of failure."
+        },
+        {
+            "question": "What are some potential security vulnerabilities in this network, particularly concerning the interactions between iMac and Meraki MS220-8P, and how would you address them?",
+            "answer": "Some potential security vulnerabilities in the network concerning the interactions between the iMac and the Meraki MS220-8P include:\n\n1. **Unsecured Network Traffic**: If the iMac is not using secure protocols (like HTTPS, SSH, etc.), sensitive data could be intercepted.\n\n   **Mitigation**: Implement encryption for all data in transit and ensure secure protocols are used.\n\n2. **Guest Network Exposure**: The presence of a guest network (SSID_guest) may allow unauthorized access to the iMac if proper segmentation is not enforced.\n\n   **Mitigation**: Ensure that the guest network is properly isolated from the private network where the iMac resides. Use VLANs to separate traffic.\n\n3. **Weak Authentication**: If the Meraki MS220-8P has weak or default credentials, it could be vulnerable to unauthorized access.\n\n   **Mitigation**: Change default credentials to strong, unique passwords and implement multi-factor authentication where possible.\n\n4. **Firmware Vulnerabilities**: Outdated firmware on the Meraki MS220-8P could expose the network to known vulnerabilities.\n\n   **Mitigation**: Regularly update the firmware of the Meraki devices to patch known vulnerabilities.\n\n5. **Malware and Phishing Risks**: The iMac could be susceptible to malware or phishing attacks, which could compromise the network.\n\n   **Mitigation**: Install and maintain up-to-date antivirus software, and educate users on recognizing phishing attempts.\n\nBy addressing these vulnerabilities, the security posture of the network can be significantly improved."
+        }
+    ]
+}

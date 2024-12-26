@@ -1,0 +1,28 @@
+{
+    "entities": [
+        "Server",
+        "Wide Area Network"
+    ],
+    "qa_pairs": [
+        {
+            "question": "What is the overall topology of this network? Is it a star, bus, ring, mesh, or hybrid topology?",
+            "answer": "The overall topology of this network is a hybrid topology."
+        },
+        {
+            "question": "What are the key network segments in this topology, and what are their purposes?",
+            "answer": "The key network segments in this topology are:\n\n1. **LAN (Local Area Network)**: Each LAN segment connects multiple workstations to a server, facilitating local communication and resource sharing among devices within a limited geographical area.\n\n2. **Wide Area Network (WAN)**: The WAN segment connects multiple LANs, allowing communication and data exchange between different geographical locations or networks. It serves as the backbone for interconnecting the various LANs."
+        },
+        {
+            "question": "Describe the role of the Server in this network and how it interacts with other entities.",
+            "answer": "In this network topology, the Server plays a crucial role as a centralized resource provider within each Local Area Network (LAN). It manages data, applications, and services that are accessed by the connected workstations. The Server facilitates communication and resource sharing among the workstations in its respective LAN.\n\nAdditionally, the Servers in different LANs are interconnected through the Wide Area Network (WAN), allowing for data exchange and communication across different geographical locations. This interaction enables users in different LANs to access shared resources and services provided by the Servers, enhancing collaboration and efficiency within the network."
+        },
+        {
+            "question": "How would you implement a backup strategy for the Server, considering its relations with other critical entities in the network?",
+            "answer": "To implement a backup strategy for the Server in the given network topology, consider the following steps:\n\n1. **Local Backups**: Each Server should perform regular backups of its data to local storage devices within the LAN. This ensures quick recovery in case of data loss.\n\n2. **Inter-Server Backups**: Utilize the Wide Area Network (WAN) to establish backup routines between Servers. Each Server can back up critical data to another Server in a different LAN, providing redundancy.\n\n3. **Scheduled Backups**: Implement a schedule for backups during off-peak hours to minimize impact on network performance and ensure that data is consistently backed up.\n\n4. **Incremental Backups**: Use incremental backups to save only the changes made since the last backup. This reduces storage requirements and speeds up the backup process.\n\n5. **Cloud Backup**: Consider integrating a cloud backup solution for additional off-site redundancy. This protects against local disasters affecting the LAN.\n\n6. **Testing and Verification**: Regularly test backup restoration processes to ensure data integrity and that backups can be successfully restored when needed.\n\n7. **Documentation**: Maintain clear documentation of the backup strategy, including schedules, procedures, and recovery steps, to ensure all team members are informed.\n\nBy following these steps, the backup strategy will be robust and capable of protecting the Server's data across the network."
+        },
+        {
+            "question": "What are some potential security vulnerabilities in this network, particularly concerning the interactions between Server and Wide Area Network, and how would you address them?",
+            "answer": "Some potential security vulnerabilities in this network concerning the interactions between the Server and the Wide Area Network (WAN) include:\n\n1. **Data Interception**: Data transmitted over the WAN can be intercepted by malicious actors.\n   - **Mitigation**: Implement encryption protocols (e.g., VPNs, SSL/TLS) to secure data in transit.\n\n2. **Unauthorized Access**: Servers may be exposed to unauthorized access from the WAN.\n   - **Mitigation**: Use firewalls to restrict access, implement strong authentication mechanisms, and regularly update access controls.\n\n3. **Denial of Service (DoS) Attacks**: The WAN can be targeted for DoS attacks, affecting server availability.\n   - **Mitigation**: Deploy intrusion detection and prevention systems (IDPS) and configure rate limiting to manage traffic.\n\n4. **Malware Infiltration**: Malware can enter the network through the WAN, compromising servers.\n   - **Mitigation**: Use antivirus and anti-malware solutions, and ensure regular updates and patches are applied to all systems.\n\n5. **Weak Network Protocols**: Using outdated or insecure protocols can expose the network to vulnerabilities.\n   - **Mitigation**: Regularly review and update network protocols to use secure versions.\n\n6. **Insufficient Monitoring**: Lack of monitoring can lead to undetected breaches or anomalies.\n   - **Mitigation**: Implement comprehensive logging and monitoring solutions to detect and respond to suspicious activities.\n\nBy addressing these vulnerabilities with appropriate security measures, the integrity and security of the network can be significantly enhanced."
+        }
+    ]
+}
