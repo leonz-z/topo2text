@@ -36,7 +36,7 @@ llamafactory-cli train \
     --warmup_steps 0 \
     --packing False \
     --report_to none \
-    --output_dir saves/Qwen2-VL-7B-Instruct/lora/train_2024-12-28-03-13-08 \
+    --output_dir saves/Qwen2-VL-7B-Instruct/lora/train_2024-12-28-04-10-19 \
     --bf16 True \
     --plot_loss True \
     --trust_remote_code True \
