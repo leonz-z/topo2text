@@ -1,0 +1,1 @@
+This network topology represents a star architecture. Key components include multiple 2811 routers for Internet access, connected via a central server. The overall structure supports efficient data flow and redundancy. Notable features include multiple Internet connections and network segmentation, ensuring reliable communication between internal devices and external resources.

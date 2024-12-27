@@ -1,0 +1,3 @@
+This network topology represents a hybrid architecture. Key components include the 校园骨干网 (Campus Backbone Network), 数据中心 (Data Center), Web服务器 (Web Servers), 虚拟化桌面服务器 (Virtual Desktop Servers), and student workstations in the 实验室 (Laboratories). These components are connected via routers and switches, facilitating communication across the network.
+
+The overall structure supports efficient data flow and resource access among users and services. Notable features include centralized management through the data center and virtual desktop environments, ensuring high availability and scalability for educational purposes. This setup enables seamless connectivity between students and the resources they need for their studies.

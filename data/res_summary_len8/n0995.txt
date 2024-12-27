@@ -1,0 +1,1 @@
+This network topology represents a star architecture. Key components include the Central Hub and Secondary Hubs, connected via hubs. The overall structure supports organized communication and efficient data flow. Notable features include scalability and centralized management, ensuring efficient communication between workstations and devices connected to the secondary hubs.

@@ -1,0 +1,1 @@
+This network topology represents a hybrid architecture. Key components include core, distribution, and access segments, connected via switches and routers. The overall structure supports efficient data flow and redundancy. Notable features include a hierarchical design and redundant paths, ensuring reliable communication between end-user devices and network resources.

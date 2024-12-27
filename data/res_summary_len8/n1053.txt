@@ -1,0 +1,3 @@
+This network topology represents a hybrid architecture. Key components include the m0n0wall Router on Soekris Net4801, Siemens DSL Modem, Comcast Cable Modem, Netgear 24 port Gigabit switch, Netgear 8 port Gigabit switches, Linksys SPA-202 ATA, Wifi Access Point, and FreeNAS/SlimNAS. The devices are connected via Ethernet switches and routers, facilitating both wired and wireless communication.
+
+The overall structure supports seamless data flow and redundancy between the office and house segments. Notable features include internet access through dual modems for redundancy and a robust local area network that supports VoIP services and storage solutions, ensuring efficient communication between office and home devices.

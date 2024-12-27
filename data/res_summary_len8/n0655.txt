@@ -1,0 +1,1 @@
+This network topology represents a star topology architecture. Key components include core switches, access switches, and end devices, connected via direct links. The overall structure supports efficient data flow and management. Notable features include scalability and ease of management, ensuring efficient communication between users and network resources.

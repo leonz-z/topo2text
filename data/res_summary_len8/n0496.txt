@@ -1,0 +1,1 @@
+This network topology represents a hybrid architecture. Key components include the Core layer, Distribution layer, and Access layer, connected via switches and routers. The overall structure supports efficient data flow and redundancy. Notable features include high availability and scalability, ensuring efficient communication between end-user devices and the enterprise network.

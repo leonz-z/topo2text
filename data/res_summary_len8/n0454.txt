@@ -1,0 +1,3 @@
+This network topology represents a hybrid architecture. Key components include multiple iNET 900 devices, 4710电台 (4710 Radio Station), 4790主台 (4790 Main Station), 4710远程台 (4710 Remote Station), a WAN (Wide Area Network), a management system, and an IP interface. The components are connected via wireless communication and wired connections, facilitating data transmission and control across the network.
+
+The overall structure supports efficient communication and data flow, ensuring connectivity between various network segments. Notable features include remote monitoring capabilities and centralized management, enhancing the network's scalability and operational efficiency.

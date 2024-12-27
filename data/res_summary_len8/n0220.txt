@@ -1,0 +1,1 @@
+This network topology represents a star architecture. Key components include Host 1, Host 2, and a router, connected via Ethernet interfaces (E0/0 and E0/1). The overall structure supports communication between local hosts and the Internet. Notable features include direct connections to the router, ensuring efficient data flow and access to external networks for both hosts.

@@ -1,0 +1,1 @@
+This network topology represents a hybrid architecture. Key components include the collapsed core and access switches, connected via multiple links. The overall structure supports efficient data flow and connectivity within the enterprise network. Notable features include redundancy and scalability, ensuring efficient communication between end-user devices and network resources.

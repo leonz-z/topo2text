@@ -1,0 +1,3 @@
+This network topology represents a hybrid architecture. Key components include core switches (FS C3560-1 and FS C3560-2), access layer switches (ZFJ-XXX-5800, HZSFZ, FT-C261), a router (AR640), and a security device (Scapath). These components are connected via various switches and routers, facilitating communication across different network segments.
+
+The overall structure supports efficient data flow and redundancy, ensuring reliable connectivity between user groups and services. Notable features include high availability through redundant links and VLAN segmentation, which enhances performance and security across the network.
