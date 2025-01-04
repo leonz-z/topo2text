@@ -1,0 +1,5 @@
+model_name_or_path: /share/huggingface/Qwen2-VL-7B-Instruct
+# adapter_name_or_path: /share/topo_lab_res/Qwen2-VL-7B-Instruct/lora/train_topo2text_v2_2024-12-28-11-29-40
+template: qwen2_vl
+infer_backend: huggingface # choices: [huggingface, vllm]
+trust_remote_code: true
