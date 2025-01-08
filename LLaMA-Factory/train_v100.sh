@@ -29,18 +29,18 @@ for dataset in "${dataset_array[@]}"; do
         --do_train True \
         --model_name_or_path "$model_name_or_path" \
         --preprocessing_num_workers 16 \
-        --finetuning_type lora \
+        --finetuning_type full \
         --template qwen2_vl \
         --flash_attn auto \
         --dataset_dir "$dataset_dir" \
         --dataset "$dataset" \
         --cutoff_len 2048 \
-        --learning_rate 1e-04 \
-        --num_train_epochs 5.0 \
+        --learning_rate 5e-05 \
+        --num_train_epochs 3.0 \
         --max_samples 100000 \
-        --per_device_train_batch_size 5 \
-        --gradient_accumulation_steps 4 \
-        --lr_scheduler_type cosine_with_restarts \
+        --per_device_train_batch_size 3 \
+        --gradient_accumulation_steps 8 \
+        --lr_scheduler_type cosine \
         --max_grad_norm 1.0 \
         --logging_steps 5 \
         --save_steps 100 \
@@ -53,9 +53,9 @@ for dataset in "${dataset_array[@]}"; do
         --trust_remote_code True \
         --ddp_timeout 180000000 \
         --optim adamw_torch \
-        --lora_rank 16 \
+        --lora_rank 8 \
         --lora_alpha 16 \
-        --lora_dropout 0.1 \
+        --lora_dropout 0 \
         --lora_target all >"$log_file" 2>&1
 
     if [ $? -eq 0 ]; then

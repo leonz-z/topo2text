@@ -6,7 +6,7 @@ export CUDA_VISIBLE_DEVICES=0,1,2,3
 
 # model_name_or_path="/share/huggingface/Qwen2-VL-2B-Instruct"
 # model_name="Qwen2-VL-2B-Instruct"
-model_name_or_path="/share/huggingface/Qwen2-VL-2B-Instruct"
+model_name_or_path="/share/model/Qwen2-VL-2B-Instruct"
 model_name="Qwen2-VL-2B-Instruct"
 datasets="topo2text_v1,topo2text_v2"
 dataset_dir="data"
@@ -16,7 +16,7 @@ IFS=',' read -r -a dataset_array <<<"$datasets"
 
 for dataset in "${dataset_array[@]}"; do
     res_name="train_${dataset}_$(date +'%Y-%m-%d-%H-%M-%S')"
-    log_file="logs/llamafactory-cli_train_${dataset}_$(date +'%Y-%m-%d-%H-%M-%S').log"
+    log_file="logs/train_${model_name}_${dataset}_$(date +'%Y-%m-%d-%H-%M-%S').log"
     output_dir="$output_base_dir/$res_name"
 
     mkdir -p "$(dirname "$log_file")"
