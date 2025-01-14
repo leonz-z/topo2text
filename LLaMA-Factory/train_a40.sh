@@ -16,7 +16,7 @@ IFS=',' read -r -a dataset_array <<<"$datasets"
 
 for dataset in "${dataset_array[@]}"; do
     res_name="train_${dataset}_$(date +'%Y-%m-%d-%H-%M-%S')"
-    log_file="logs/train_${model_name}_${dataset}_$(date +'%Y-%m-%d-%H-%M-%S').log"
+    log_file="logs/train_${finetuning_type}_${model_name}_${dataset}_$(date +'%Y-%m-%d-%H-%M-%S').log"
     output_dir="$output_base_dir/$res_name"
 
     mkdir -p "$(dirname "$log_file")"

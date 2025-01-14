@@ -2,21 +2,22 @@
 
 source activate topo_qwen
 
-export CUDA_VISIBLE_DEVICES=0,1,2,3
+export CUDA_VISIBLE_DEVICES=0,1,2
 
 # model_name_or_path="/share/huggingface/Qwen2-VL-2B-Instruct"
 # model_name="Qwen2-VL-2B-Instruct"
-model_name_or_path="/share/model/Qwen2-VL-2B-Instruct"
-model_name="Qwen2-VL-2B-Instruct"
+model_name_or_path="/share/huggingface/Qwen2-VL-7B-Instruct"
+model_name="Qwen2-VL-7B-Instruct"
 datasets="topo2text_v1,topo2text_v2"
 dataset_dir="data"
+finetuning_type="lora"
 output_base_dir="/share/topo_lab_res/$model_name/lora"
 
 IFS=',' read -r -a dataset_array <<<"$datasets"
 
 for dataset in "${dataset_array[@]}"; do
     res_name="train_${dataset}_$(date +'%Y-%m-%d-%H-%M-%S')"
-    log_file="logs/train_${model_name}_${dataset}_$(date +'%Y-%m-%d-%H-%M-%S').log"
+    log_file="logs/train_${finetuning_type}_${model_name}_${dataset}_$(date +'%Y-%m-%d-%H-%M-%S').log"
     output_dir="$output_base_dir/$res_name"
 
     mkdir -p "$(dirname "$log_file")"
@@ -29,7 +30,7 @@ for dataset in "${dataset_array[@]}"; do
         --do_train True \
         --model_name_or_path "$model_name_or_path" \
         --preprocessing_num_workers 16 \
-        --finetuning_type lora \
+        --finetuning_type "$finetuning_type" \
         --template qwen2_vl \
         --flash_attn auto \
         --dataset_dir "$dataset_dir" \
