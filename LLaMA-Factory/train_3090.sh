@@ -2,13 +2,13 @@
 
 source activate topo_qwen
 
-export CUDA_VISIBLE_DEVICES=0,1,2
+export CUDA_VISIBLE_DEVICES=0,1,2,3
 
 # model_name_or_path="/share/huggingface/Qwen2-VL-2B-Instruct"
 # model_name="Qwen2-VL-2B-Instruct"
-model_name_or_path="/share/huggingface/Qwen2-VL-7B-Instruct"
-model_name="Qwen2-VL-7B-Instruct"
-datasets="topo2text_v1,topo2text_v2"
+model_name_or_path="/share/huggingface/Qwen2-VL-2B-Instruct"
+model_name="Qwen2-VL-2B-Instruct"
+datasets="topo2text_0_500"
 dataset_dir="data"
 finetuning_type="lora"
 output_base_dir="/share/topo_lab_res/$model_name/lora"

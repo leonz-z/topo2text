@@ -1,4 +1,12 @@
 {
+  "topo2text_0_500": {
+    "file_name": "mllm_topo2text_normal_0_500.json",
+    "formatting": "sharegpt",
+    "columns": {
+      "messages": "conversations",
+      "images": "images"
+    }
+  },
   "topo2text_v1": {
     "file_name": "mllm_topo2text_v1.json",
     "formatting": "sharegpt",
