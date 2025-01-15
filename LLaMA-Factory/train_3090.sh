@@ -6,12 +6,12 @@ export CUDA_VISIBLE_DEVICES=0,1,2,3
 
 # model_name_or_path="/share/huggingface/Qwen2-VL-2B-Instruct"
 # model_name="Qwen2-VL-2B-Instruct"
-model_name_or_path="/share/huggingface/Qwen2-VL-2B-Instruct"
-model_name="Qwen2-VL-2B-Instruct"
+model_name_or_path="/share/huggingface/Qwen2-VL-7B-Instruct"
+model_name="Qwen2-VL-7B-Instruct"
 datasets="topo2text_0_500"
 dataset_dir="data"
 finetuning_type="lora"
-output_base_dir="/share/topo_lab_res/$model_name/lora"
+output_base_dir="/share/topo_lab_res/final_version/$model_name/lora"
 
 IFS=',' read -r -a dataset_array <<<"$datasets"
 
@@ -37,7 +37,7 @@ for dataset in "${dataset_array[@]}"; do
         --dataset "$dataset" \
         --cutoff_len 2048 \
         --learning_rate 5e-05 \
-        --num_train_epochs 3.0 \
+        --num_train_epochs 10.0 \
         --max_samples 100000 \
         --per_device_train_batch_size 3 \
         --gradient_accumulation_steps 8 \
