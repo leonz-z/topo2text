@@ -4,3 +4,4 @@ adapter_name_or_path: /share/topo_lab_res/final_version/Qwen2-VL-7B-Instruct/lor
 template: qwen2_vl
 infer_backend: huggingface # choices: [huggingface, vllm]
 trust_remote_code: true
+
